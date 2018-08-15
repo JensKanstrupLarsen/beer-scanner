@@ -8,6 +8,8 @@ c = conn.cursor()
 
 c.execute("SELECT * FROM bøller")
 print(c.fetchall())
+c.execute("SELECT * FROM øller")
+print(c.fetchall())
 
 conn.commit()
 conn.close()

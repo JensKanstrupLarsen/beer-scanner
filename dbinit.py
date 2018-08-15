@@ -12,8 +12,8 @@ conn = sqlite.connect("øllerbøller.db")
 c = conn.cursor()
 
 c.execute("CREATE TABLE bøller (id int, name text, faction text, level int)")
-c.execute("CREATE TABLE øller (id int, product text, price int)")
-c.execute("CREATE TABLE øllerbøller (bølle int, ølle int, dato datetimeqty int)")
+c.execute("CREATE TABLE øller (id INTEGER PRIMARY KEY, product text, price int)")
+c.execute("CREATE TABLE øllerbøller (bølle int, ølle int, dato datetime, qty int)")
 
 conn.commit()
 conn.close()
