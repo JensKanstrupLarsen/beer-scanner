@@ -9,6 +9,8 @@ c = conn.cursor()
 c.execute("SELECT * FROM bøller")
 bøller = c.fetchall()
 
-code128 = barcode.get_barcode_class('code128')
-
+CODE128 = barcode.get_barcode_class('code128')
+for b in bøller:
+    code128 = CODE128(str(b[0]))
+    code128.save("barcodes/" + "_".join(b[1].split(" ")))
 conn.close()
