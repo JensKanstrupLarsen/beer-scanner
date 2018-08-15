@@ -3,8 +3,12 @@ import barcode
 import numpy as np
 import sqlite3
 
-first_id = 1000
+conn = sqlite3.connect('øllerbøller.db')
+c = conn.cursor()
 
-students = np.genfromtxt('students.csv', delimiter=',', dtype=(str))
+c.execute("SELECT * FROM bøller")
+bøller = c.fetchall()
 
-conn = sqlite3.connect('example.db')
+code128 = barcode.get_barcode_class('code128')
+
+conn.close()
