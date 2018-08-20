@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import barcode
+from barcode.writer import ImageWriter
 import numpy as np
 import sqlite3
 
@@ -11,6 +12,6 @@ bøller = c.fetchall()
 
 CODE128 = barcode.get_barcode_class('code128')
 for b in bøller:
-    code128 = CODE128(str(b[0]))
+    code128 = CODE128(str(b[0]),writer=ImageWriter())
     code128.save("barcodes/" + "_".join(b[1].split(" ")))
 conn.close()
