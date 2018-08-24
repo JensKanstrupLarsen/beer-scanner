@@ -28,7 +28,6 @@ conn.close()
 for file in glob.glob("*.png"):
     pics.append(file)
 
-print (pics)
 workfile = "admins.tex"
 F = open(workfile,"a")
 F.write("\\documentclass[a4paper,11pt]{article}")

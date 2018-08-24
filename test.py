@@ -10,6 +10,8 @@ c.execute("SELECT * FROM bøller")
 print(c.fetchall())
 c.execute("SELECT * FROM øller")
 print(c.fetchall())
+c.execute("SELECT * FROM øllerbøller")
+print(c.fetchall())
 
 conn.commit()
 conn.close()
