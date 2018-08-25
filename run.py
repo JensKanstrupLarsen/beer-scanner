@@ -69,7 +69,8 @@ def grab_a_beer():
 
             if beer == cancel:
                 conn.rollback()
-                print("I cannot say I am not disappointed, but if you have coin another time I will have still have wares")
+                print("I cannot say I am not disappointed, but if you have coin another time I will still have wares")
+                buying = 0
     except:
         print("Something went wrong. Please try again. Nothing has been recorded.")
         conn.rollback()
